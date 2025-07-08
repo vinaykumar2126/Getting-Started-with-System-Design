@@ -1,18 +1,21 @@
 ## Without strategy pattern
 - Here `Vehicle.java` is the parent and it has defined a method drive.
 - `SportsVehicle.java` and `OffRoadVehicle.java` are using /Sports vehicle drive capability/ which is not in parent so we r not reusing the code but we r duplicating the code.
+-Every time you want new behavior, you create a new subclass
 
 ## WithStrategyPattern
+-Here Vehicle.java does not define the drive behavior directly — instead, it holds a reference to a DriveStrategy interface.
 
-The workspace contains two folders by default, where:
+-Concrete classes like SportsDriveStrategy and NormalDriveStrategy implement different driving behaviors independently.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+-SportsVehicle.java and OffRoadVehicle.java now reuse the same strategy object (SportsDriveStrategy) — no duplication of logic.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+-To add a new driving style, you simply create a new strategy class (e.g., HybridDriveStrategy) — no need to touch or subclass Vehicle.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+-This approach follows the Open/Closed Principle, improves code reuse, and makes the system more flexible and scalable.
 
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Interface:
+-An interface is like a contract that says:
+-"Any class that implements me must provide the following methods."
+-It only defines method signatures, not actual code or behavior.
+-Supports multiple inheritence.
