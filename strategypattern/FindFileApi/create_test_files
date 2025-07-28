@@ -1,0 +1,28 @@
+import os
+
+def create_dummy_files(directory):
+    os.makedirs(directory, exist_ok=True)
+
+    # 1. Create a file > 5MB
+    with open(os.path.join(directory, "bigfile.txt"), "wb") as f:
+        f.write(b"0" * 6 * 1024 * 1024)  # 6MB file
+
+    # 2. Create small XML files
+    with open(os.path.join(directory, "sample1.xml"), "w") as f:
+        f.write("<config>\n  <item>1</item>\n</config>")
+
+    with open(os.path.join(directory, "sample2.xml"), "w") as f:
+        f.write("<root>\n  <value>Test</value>\n</root>")
+
+    # 3. Create other small files
+    with open(os.path.join(directory, "notes.txt"), "w") as f:
+        f.write("This is a test note file.")
+
+    with open(os.path.join(directory, "data.csv"), "w") as f:
+        f.write("id,name\n1,Test\n2,Example")
+
+    print(f"✅ Dummy files created in: {directory}")
+
+if __name__ == "__main__":
+    test_dir = "test_files"
+    create_dummy_files(test_dir)
