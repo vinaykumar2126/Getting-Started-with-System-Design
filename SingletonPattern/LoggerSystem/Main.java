@@ -10,15 +10,20 @@ public class Main {
             }).start();
         }
         
+        // ✅ Wait for threads to complete
+        try {
+            Thread.sleep(1000);  // Wait 1 second for threads to finish
+        } catch (InterruptedException e) {}
         
-        // logger.error("This is error");
-        // logger.info("This is info");
-        // logger.debug("This is debug");
+        Logger logger = Logger.getInstance();
+        logger.error("This is error");
+        logger.info("This is info");
+        logger.debug("This is debug");
         
-        // System.out.println("--- Set to ERROR level ---");
-        // logger.setLogLevel("ERROR");
-        // logger.error("Error shows");
-        // logger.info("Info hidden");
-        // logger.debug("Debug hidden");
+        System.out.println("--- Set to ERROR level ---");
+        logger.setLogLevel("ERROR");
+        logger.error("Error shows");
+        logger.info("Info hidden");
+        logger.debug("Debug hidden");
     }
 }
