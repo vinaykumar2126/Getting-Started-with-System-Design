@@ -8,6 +8,9 @@ public class Logger {
         System.out.println("Logger created");
     }
     
+    public String getInstanceInfo(){
+        return "Logger instance: " + this.hashCode() + " | Thread: " + Thread.currentThread().getName();
+    }
     public static synchronized Logger getInstance() {
         if (instance == null) {
             instance = new Logger();
