@@ -7,6 +7,7 @@ class PhoneNotifier(Observer):
     def __init__(self):
         """Constructor to initialize a notification history list."""
         self._notification_history = []
+        print("\nPhone Notifier has been created.")
 
     def update(self, message: str):
         """Reacts to an update by printing and storing the notification."""
@@ -26,3 +27,4 @@ class AppNotifier(Observer):
     def update(self, message: str):
         """Reacts to an update by printing a message."""
         print(f"  -> App Notifier (Red Dot): {message}")
+        
