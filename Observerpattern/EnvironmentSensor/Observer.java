@@ -1,5 +1,5 @@
 package EnvironmentSensor;
 
 public interface Observer {
-    void update();
+    void update(SensorUpdate update);
 }

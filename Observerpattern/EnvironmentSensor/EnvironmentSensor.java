@@ -2,6 +2,7 @@ package EnvironmentSensor;
 import java.util.*;
 public class EnvironmentSensor implements Subject {
     private List<Observer> observers = new ArrayList<>();
+    private EnvironmentUpdate lastUpdate;
     private int temperature;
     private int humidity;
     private int lightLevel;
@@ -10,16 +11,16 @@ public class EnvironmentSensor implements Subject {
     public int getTemperature(){
         return temperature;
     }
-    public void setTemperature(int temperature){
-        this.temperature = temperature;
-        notifyObservers();
+    public void setTemperature(int newTemperature){
+        int oldTemperature = this.temperature;
+        this.temperature = newTemperature;
+        notifyObservers(new EnvironmentUpdate(this, "TEMPERATURE_CHANGE", oldTemperature, newTemperature));
     }
 
     @Override
     public void connect(Observer o) {
         observers.add(o);
         System.out.println("Observer connected.");
-        o.update();
     }
 
     @Override
@@ -29,9 +30,9 @@ public class EnvironmentSensor implements Subject {
     }
 
     @Override
-    public void notifyObservers() {
+    public void notifyObservers(SensorUpdate update) {
         for(Observer observer : observers) {
-            observer.update();
+            observer.update(update);
         }
     }
 }
