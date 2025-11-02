@@ -7,8 +7,4 @@ public abstract class PostDecorator implements Posts {
         this.decoratedPost = decoratedPost;
     }
 
-    @Override
-    public String createPost() {
-        return decoratedPost.createPost();
-    }
 }
