@@ -15,10 +15,10 @@ public class AirConditioner implements Observer{
         if (temperature > 28) {
             turnOn();
             setTemperature(22);
-            System.out.println("  → " + location + " AC auto-turned ON (temp too high: " + temperature + "°C)");
+            System.out.println("  " + location + " AC auto-turned ON (temp too high: " + temperature + "°C)");
         } else if (temperature < 20) {
             turnOff();
-            System.out.println("  → " + location + " AC auto-turned OFF (temp comfortable: " + temperature + "°C)");
+            System.out.println("  " + location + " AC auto-turned OFF (temp comfortable: " + temperature + "°C)");
         }
     }
     

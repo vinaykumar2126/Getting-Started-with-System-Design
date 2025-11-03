@@ -32,13 +32,13 @@ public class Sensor implements Subject {
     public void detectMotion() {
         System.out.println("\n[" + sensorType + " Sensor] Motion detected!");
         this.motionDetected = true;
-        notifyObservers();  // ← This triggers the notification!
+        notifyObservers();  // This triggers the notification!
     }
 
     public void setTemperature(int temp) {
         System.out.println("\n[" + sensorType + " Sensor] Temperature changed to " + temp + "°C");
         this.temperature = temp;
-        notifyObservers();  // ← This triggers the notification!
+        notifyObservers();  //  This triggers the notification!
     }
     public boolean isMotionDetected() {
         return motionDetected;

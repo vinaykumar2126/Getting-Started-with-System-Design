@@ -13,7 +13,7 @@ public class Light implements Observer {
         // React to sensor changes
         if (motionDetected) {
             turnOn();
-            System.out.println("  → " + location + " light auto-turned ON (motion detected)");
+            System.out.println(""+ location + " light auto-turned ON (motion detected)");
         }
     }
     public void turnOn() {
