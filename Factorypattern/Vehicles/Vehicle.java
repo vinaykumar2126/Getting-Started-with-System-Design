@@ -6,3 +6,4 @@ public interface Vehicle {
     void getType();
 }
 
+

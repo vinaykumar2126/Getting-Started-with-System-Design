@@ -2,7 +2,7 @@ package Vehicles;
 
 public class Main {
     public static void main(String args[]){
-        Vehicle car = VehicleFactory.createVehicle("CAR");
+        Vehicle car = VehicleFactory.createVehicle("car");
         car.start();
         car.getType();
         Vehicle bike = VehicleFactory.createVehicle("BIKE");
@@ -11,6 +11,7 @@ public class Main {
         Vehicle truck = VehicleFactory.createVehicle("TRUCK");
         truck.start();
         truck.getType();
+        car.start();
 
     }
     
