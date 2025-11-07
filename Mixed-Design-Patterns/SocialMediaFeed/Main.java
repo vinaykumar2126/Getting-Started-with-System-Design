@@ -22,6 +22,7 @@ public class Main {
 
         // Charlie follows Bob
         bob.addFollower(charlie);
+        bob.addFollower(alice);
 
         // Bob creates a simple post
         System.out.println("\n=== Bob posting ===");
