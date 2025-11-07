@@ -1,11 +1,13 @@
+## Calculate total active time per user
+
 from datetime import datetime
 data = [
     {"user":"alice","start":"2025-11-03 09:00","end":"2025-11-03 10:30"},
     {"user":"bob","start":"2025-11-01 09:15","end":"2025-11-01 09:45"},
     {"user":"alice","start":"2025-11-03 09:25","end":"2025-11-03 11:45"}
 ]
-# alice_times = [entry for entry in data if entry["user"]=="alice"]
-# print(alice_times)
+alice_times = [entry for entry in data if entry["user"]=="alice"]
+print(alice_times)
 user_times = {}
 for entry in data:
     start= datetime.strptime(entry["start"], "%Y-%m-%d %H:%M")
@@ -19,9 +21,6 @@ for entry in data:
         user_times[entry["user"]] += int(duration_minutes)
 
 print(user_times)
-
-
-
 
 
 
