@@ -67,3 +67,18 @@ data = [
 
 result = compute_total_active_time(data)
 print(result)
+
+
+#Time and space complexity analysis:
+#Time Complexity: Time Complexity: O(n + m log m)
+# Where:
+
+# n = total number of sessions (all users combined)
+# m = maximum number of sessions for any single user
+
+# Sort per user	O(m log m)	Sort m sessions per user
+
+# Space Complexity: O(n)
+# Storing sessions per user	O(n) - All sessions stored in user_sessions as tuples
+# user_totals = {}  # ← O(k) where k = number of users
+# Usually k << n, so negligible

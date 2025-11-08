@@ -38,3 +38,10 @@ print(f"Built-in result: {dt}") # Built-in result: 2025-11-06 07:56:03.028316
 date_string = "2025-11-06 14:30"
 dt1 = datetime.strptime(date_string, "%Y-%m-%d %H:%M")
 print(dt1)
+
+
+dt5 = 1730907720
+x = datetime.fromtimestamp(dt5)
+print(type(x))
+y = x.strftime("%Y-%m-%d %H:%M:%S")
+print(type(y))  # <class 'str'>

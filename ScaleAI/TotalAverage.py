@@ -33,7 +33,6 @@ def calculate_user_currency_summary(transactions):
             total = sum(amounts)
             avg = total / len(amounts)
             summary[user][curr] = {"total": total, "avg": avg}
-
     return summary
 
 
