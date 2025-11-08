@@ -18,7 +18,7 @@ td4 = timedelta(days=-1)
 print(td4) # -1 day, 0:00:00
 
 today = datetime(2025,11,6,7,57)
-print(today)
+print(today) # 2025-11-06 07:57:00
 td5=today-timedelta(days=3) #Most Common way
 # or td5=today+timedelta(days=-3)
 td6=today+timedelta(days=-3)
@@ -28,11 +28,11 @@ print(datetime.now(tz=timezone.utc))  # Current time in UTC
 
 # Get current timestamp
 timestamp = time.time()
-print(f"Timestamp: {timestamp}")
+print(f"Timestamp: {timestamp}") # 1762547763.028316
 
 # Method 1: Using Python's built-in (easy)
 dt = datetime.fromtimestamp(timestamp)
-print(f"Built-in result: {dt}")
+print(f"Built-in result: {dt}") # Built-in result: 2025-11-06 07:56:03.028316
 
 
 date_string = "2025-11-06 14:30"

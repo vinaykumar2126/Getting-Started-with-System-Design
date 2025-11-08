@@ -12,4 +12,4 @@ print(dt.date()) # 2025-11-06
 print(dt.time()) # 14:30:00
 print(dt.timetuple()) # It returns a named tuple representing the date and time components
 print(dt.year) # 2025
-print(dt.total_seconds()) # AttributeError: 'datetime.datetime' object has no attribute 'total_seconds'
+# print(dt.total_seconds()) # AttributeError: 'datetime.datetime' object has no attribute 'total_seconds'
