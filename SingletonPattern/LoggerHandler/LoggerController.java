@@ -6,12 +6,13 @@ public class LoggerController {
 
     private LoggerController() {
         // Initialize with a default logger, e.g., ConsoleHandler
-        logger = new ConsoleHandler(LogLevel.INFO);
+        Logger consoleLogger = new ConsoleHandler(LogLevel.INFO);
         Logger fileLogger = new FileHandler(LogLevel.INFO);
         Logger dbLogger = new DbHandler(LogLevel.WARN);
-        logger.setNextLogger(fileLogger);
+        consoleLogger.setNextLogger(fileLogger);
         fileLogger.setNextLogger(dbLogger);
 
+        this.logger = consoleLogger;
     }
 
     public static LoggerController getInstance() {
