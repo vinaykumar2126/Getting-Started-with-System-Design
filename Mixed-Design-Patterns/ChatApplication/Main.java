@@ -15,6 +15,8 @@ public class Main {
         
         // ✅ Bob sends message - doesn't know about broker!
         bob.sendMessage("Hello Charlie!", charlie);
+        broker.broadcastMessage(alice, "Meeting at 3 PM!");
+
         
         // ✅ Alice sends message - doesn't know about broker!
         alice.sendMessage("Hi Bob!", bob);

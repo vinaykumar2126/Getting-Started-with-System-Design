@@ -1,8 +1,12 @@
 package ChatApplication;
-
+import java.util.*;
+// Director Observer Pattern like WhatsApp, DM, Email does not need registration
 public class MessageBroker {
     private static MessageBroker instance;
-    private MessageBroker(){}
+    private List<User> users;
+    private MessageBroker(){
+        users = new ArrayList<>();
+    }
 
     public static synchronized MessageBroker getInstance(){
         if(instance==null){
@@ -11,7 +15,15 @@ public class MessageBroker {
         return instance;
     }
     public void registerUser(User user){
+        users.add(user);
 
+    }
+    public void broadcastMessage(User sender , String message){
+        for(User user : users){
+            if(!user.equals(sender)){
+                user.update(sender.getName(), message);
+            }
+        }
     }
     // ✅ THIS WAS MISSING! Send message from sender to receiver
     public void sendMessage(User sender, User receiver, String message) {
@@ -20,10 +32,8 @@ public class MessageBroker {
         receiver.update(sender.getName(), message);
     }
     
-    public void execute(SendMessageCommand messagecommand){
-        messagecommand.execute();
 
-    }
+
    
 
 }
