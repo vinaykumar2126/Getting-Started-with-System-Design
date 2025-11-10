@@ -18,9 +18,9 @@ public class Main {
 
         // Process payment using Factory to get strategy
         PaymentStrategy paymentMethod = Paymentfactory.getPaymentMethod("CreditCard");
-        if (paymentMethod != null) {
-            paymentMethod.pay(order);
-        }
+        PaymentProcessor processor = new PaymentProcessor();
+        processor.processPayment(order, paymentMethod);
+        
 
         // Change order status to shipped
         order.place(Orderstatus.SHIPPED);

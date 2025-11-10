@@ -2,7 +2,8 @@ package ECommerceOrderProcessingSystem;
 
 public class Creditcard implements PaymentStrategy {
     @Override
-    public void pay(Order order) {
-        System.out.println("Paid " + order.getAmount() + " using Credit Card.");
+    public void pay(int amount) {
+        System.out.println("Paid " + amount + " using Credit Card.");
     }
 }
+
