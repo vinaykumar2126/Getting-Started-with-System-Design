@@ -24,6 +24,7 @@ def calculate_user_currency_summary(transactions):
         curr = record["currency"]
         amt = record["amount"]
         grouped[user][curr].append(amt)
+    
 
     # Compute total and average per user per currency
     summary = {}
@@ -33,6 +34,7 @@ def calculate_user_currency_summary(transactions):
             total = sum(amounts)
             avg = total / len(amounts)
             summary[user][curr] = {"total": total, "avg": avg}
+    print(grouped)
     return summary
 
 
@@ -47,9 +49,11 @@ transactions = [
 ]
 
 result = calculate_user_currency_summary(transactions)
-print(result)
+print(result) 
 
-
+# d = defaultdict(list)
+# d["x"].append(1)
+# print(d)
 
 
 

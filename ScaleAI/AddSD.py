@@ -11,7 +11,7 @@ import statistics
 def compute_user_stddevs(scores):
     def is_valid_score(score):
         return score["user"] and isinstance(score["score"], (float, int))
-            
+
     user_scores = defaultdict(list)
     for score in scores:
         if not is_valid_score(score):
@@ -26,4 +26,4 @@ def compute_user_stddevs(scores):
         summary[user] = {"stddev": sd, "range": r}
     return summary
 result = compute_user_stddevs(scores)
-print(result)  # Expected: {'A': 8.16496580927726,
+print(result) # {'A': {'stddev': 10.0, 'range': 20}, 'B': {'stddev': 0.0, 'range': 0}}

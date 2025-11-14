@@ -11,9 +11,14 @@ from collections import defaultdict
 import statistics
 
 def compute_user_ratings(sessions):
+    def is_valid(session):
+        if session["user"] and isinstance(session["rating"],(float,int)):
+            return True
+        else:
+            return False
     user_sessions = defaultdict(list)
     for session in sessions:
-        if not session["user"]:
+        if not is_valid(session):
             continue
         user = session["user"]
         rating = session["rating"]

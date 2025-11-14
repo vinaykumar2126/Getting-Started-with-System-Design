@@ -16,7 +16,6 @@ print(total_seconds) # 184530.0
 #Use of negatives
 td4 = timedelta(days=-1)
 print(td4) # -1 day, 0:00:00
-
 today = datetime(2025,11,6,7,57)
 print(today) # 2025-11-06 07:57:00
 td5=today-timedelta(days=3) #Most Common way
@@ -28,11 +27,13 @@ print(datetime.now(tz=timezone.utc))  # Current time in UTC
 
 # Get current timestamp
 timestamp = time.time()
+print(type(timestamp))  # <class 'float'>
 print(f"Timestamp: {timestamp}") # 1762547763.028316
 
 # Method 1: Using Python's built-in (easy)
 dt = datetime.fromtimestamp(timestamp)
 print(f"Built-in result: {dt}") # Built-in result: 2025-11-06 07:56:03.028316
+print(type(dt))  # <class 'datetime.datetime'>
 
 
 date_string = "2025-11-06 14:30"
@@ -45,3 +46,6 @@ x = datetime.fromtimestamp(dt5)
 print(type(x))
 y = x.strftime("%Y-%m-%d %H:%M:%S")
 print(type(y))  # <class 'str'>
+print(y)  # 2024-11-06 14:22:00
+
+print(datetime(2025,11,12,1,1,1))

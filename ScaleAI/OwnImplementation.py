@@ -17,7 +17,7 @@ def UserActivityCalculator(session):
         end = parse_data(entry["end"])
 
         user_sessions[entry["user"]].append((start,end))
-    user_totals=  {}
+    user_totals = {}
     
 
     for user,intervals in user_sessions.items():
