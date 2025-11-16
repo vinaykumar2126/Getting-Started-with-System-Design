@@ -5,9 +5,9 @@ from log_levels import INFO, DEBUG, ERROR
 
 def get_logger_chain():
     # Create loggers
-    error_logger = ErrorLogger(ERROR)
-    file_logger = FileLogger(DEBUG)
-    console_logger = ConsoleLogger(INFO)
+    error_logger = ErrorLogger(ERROR) #3
+    file_logger = FileLogger(DEBUG) #2
+    console_logger = ConsoleLogger(INFO) #1
 
     # Build chain: error -> file -> console
     error_logger.set_next(file_logger)

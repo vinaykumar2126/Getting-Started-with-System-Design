@@ -5,6 +5,8 @@ public class Main {
         // PaymentStrategy strategy = new Upi();
         ShoppingCart cart = new ShoppingCart(new Upi());
         System.out.println(cart.checkout(100));
+        cart.setPaymentStrategy(new CreditCard());
+        System.out.println(cart.checkout(200));
         
     }
     

@@ -15,6 +15,7 @@ public class Library {
         
     }
     public String getName(){
-        return this.books.get(0).toString();
+        return books.get(0).toString();
     }
 }
+

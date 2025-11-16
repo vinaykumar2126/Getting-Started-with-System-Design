@@ -31,7 +31,7 @@ public class CSVtoJSON {
             }
             data.add(record);
         }
-        // System.out.println(data);
+        // ]System.out.println(data);
         StringBuilder json = new StringBuilder();
         json.append("[\n");
         for(int i=0;i<data.size();i++){

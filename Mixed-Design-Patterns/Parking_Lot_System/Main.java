@@ -9,6 +9,7 @@ public class Main {
         int spot1 = parkingLot.findSpotAndParkVehicle(bike);
         System.out.println("Vehicle parked at spot: " + spot1);
         // boolean success = parkingLot.checkoutVehicle(bike);
+        parkingLot.setStrategy(new RandomSpotStrategy());
         int carSpot = parkingLot.findSpotAndParkVehicle(CAR);
         System.out.println("Vehicle parked at spot: " + carSpot);
         // System.out.println("Vehicle checkout successful: " + success);

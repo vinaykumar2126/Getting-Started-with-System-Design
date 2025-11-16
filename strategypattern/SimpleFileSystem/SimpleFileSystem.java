@@ -1,7 +1,7 @@
-package strategypattern.SimpleFileSystem;
+package SimpleFileSystem;
 import java.util.*;
 public class SimpleFileSystem {
-    private DiskDrive disk;
+    private DiskDrive disk;  // disk variable can access DiskDrive methods
     private Map<String,Integer>fileToBlock;
     private int nextAvailableBlock;
 
@@ -28,5 +28,16 @@ public class SimpleFileSystem {
         }
         byte[] data = disk.readBlock(blockNumber);
         return new String(data);
+    }
+
+    public void listFiles(){
+        System.out.println("\nFiles in the system:");
+        if(fileToBlock.isEmpty()){
+            System.out.println("No files found.");
+            return;
+        }
+        for(String fileName : fileToBlock.keySet()){
+            System.out.println("- " + fileName + " (Block: " + fileToBlock.get(fileName) + ")");
+        }
     }
 }

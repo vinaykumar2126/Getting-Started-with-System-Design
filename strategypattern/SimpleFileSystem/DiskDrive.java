@@ -1,4 +1,4 @@
-package strategypattern.SimpleFileSystem;
+package SimpleFileSystem;
 
 public interface DiskDrive {
     void writeBlock(int blockNumber, byte[] data);

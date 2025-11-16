@@ -19,3 +19,18 @@
 -"Any class that implements me must provide the following methods."
 -It only defines method signatures, not actual code or behavior.
 -Supports multiple inheritence.
+
+## Encapsulation
+-Data hiding
+-public class SportsVehicle extends Vehicle {
+    SportsVehicle(){  // Constructor encapsulates the strategy choice
+        super(new SportsDriveStrategy());  // Internal implementation hidden
+    }
+    // Client doesn't know which strategy is used internally
+}
+
+-Client Code → sportsVehicle.drive() → [ENCAPSULATION BOUNDARY] →       Internal Implementation
+     ↑                                                                      ↓
+  PUBLIC ACCESS                                                    HIDDEN FROM
+                                                                   CLIENT
+                                          

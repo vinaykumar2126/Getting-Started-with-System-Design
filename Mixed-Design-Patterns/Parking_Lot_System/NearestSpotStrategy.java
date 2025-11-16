@@ -17,8 +17,8 @@ public class NearestSpotStrategy implements ParkingStrategy {
 
     private boolean matchesType(Vehicle.VehicleType vehicleType, ParkingSpot.SpotType spotType) {
         switch (vehicleType) {
-            case BIKE: return spotType == ParkingSpot.SpotType.SMALL;
-            case CAR: return spotType == ParkingSpot.SpotType.REGULAR;
+            case BIKE: return spotType == ParkingSpot.SpotType.SMALL || spotType == ParkingSpot.SpotType.REGULAR;
+            case CAR: return spotType == ParkingSpot.SpotType.REGULAR || spotType == ParkingSpot.SpotType.LARGE;
             case TRUCK: return spotType == ParkingSpot.SpotType.LARGE;
             default: return false;
         }

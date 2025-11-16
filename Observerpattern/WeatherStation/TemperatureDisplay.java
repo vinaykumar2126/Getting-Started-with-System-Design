@@ -7,6 +7,7 @@ public class TemperatureDisplay implements WeatherDisplay {
         this.station = station;
     }
 
+    
     @Override
     public void update() {
         System.out.println("Temperature Display: " + station.getTemperature() + "°C");

@@ -14,12 +14,13 @@ public class TopKCategoryFinder {
         }
     }
 
-    public List<Map.Entry<String, Integer>> getTopKCategories(int k) {
+   public List<Map.Entry<String, Integer>> getTopKCategories(int k) {
         PriorityQueue<Map.Entry<String, Integer>> minHeap =
             new PriorityQueue<>(Comparator.comparingInt(Map.Entry::getValue));
 
         for (Map.Entry<String, Integer> entry : categoryCount.entrySet()) {
             minHeap.add(entry);  //offer
+            System.out.println(entry);
             if (minHeap.size() > k) {
                 minHeap.poll();
             }

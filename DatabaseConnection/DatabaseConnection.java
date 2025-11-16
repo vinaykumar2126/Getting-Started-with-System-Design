@@ -6,3 +6,4 @@ public class DatabaseConnection {
         System.out.println("Executing query: " + query);
     }
 }
+

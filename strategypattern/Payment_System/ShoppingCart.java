@@ -5,6 +5,9 @@ public class ShoppingCart {
     public ShoppingCart(PaymentStrategy strategy){
         this.paymentStrategy = strategy;
     }
+    public void setPaymentStrategy(PaymentStrategy strategy){
+        this.paymentStrategy = strategy;
+    }
     public String checkout(int amount){
         return paymentStrategy.pay(amount);
     }

@@ -27,3 +27,5 @@ public class VendingMachineEasy{
             System.out.println(i + ": " + products[i] + " (" + prices[i] + " cents)");
     }
 }
+
+

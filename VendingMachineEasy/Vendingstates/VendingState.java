@@ -6,3 +6,4 @@ public interface VendingState {
     void selectProduct(VendingMachineEasy vm, int idx);
     void dispense(VendingMachineEasy vm);
 }
+

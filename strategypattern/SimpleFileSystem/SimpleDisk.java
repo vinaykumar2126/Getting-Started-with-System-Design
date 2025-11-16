@@ -1,4 +1,4 @@
-package strategypattern.SimpleFileSystem;
+package SimpleFileSystem;
 
 public class SimpleDisk implements DiskDrive {
     private byte[][] blocks = new byte[100][1024]; // 100 blocks, 1024 bytes each

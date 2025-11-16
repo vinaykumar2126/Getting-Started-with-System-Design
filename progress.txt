@@ -1,0 +1,43 @@
+Best for Learning: Parking Lot System
+Why?
+
+✅ Medium difficulty (not overwhelming)
+✅ Clear requirements
+✅ Teaches Factory + Strategy (new patterns!)
+✅ Very common interview question
+✅ 3-4 hours to complete
+New Patterns:
+
+Factory Pattern (creating objects)
+Strategy Pattern (different algorithms)
+
+🔥Best for Resume: Food Delivery App
+Why?
+
+
+✅ Looks impressive
+✅ Everyone knows Swiggy/Zomato
+✅ Uses 5 design patterns
+✅ Real-world complexity
+✅ Great conversation starter in interviews
+New Patterns:
+
+Factory Pattern
+Strategy Pattern
+Chain of Responsibility
+Decorator Pattern
+
+
+Best for Interviews: Movie Ticket Booking
+Why?
+
+✅ VERY common FAANG question
+✅ Tests concurrency (seat blocking)
+✅ Tests state management
+✅ Clear business logic
+✅ Asked at Amazon, Uber, BookMyShow
+New Patterns:
+
+Factory Pattern
+State Pattern
+Concurrency handling

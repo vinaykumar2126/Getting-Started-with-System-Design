@@ -72,7 +72,7 @@ public class TaskManager implements Subject{
     public void updateStatus(TaskStatus newStatus, String updatedBy) {
         TaskStatus oldStatus = this.status;
         this.status = newStatus;
-        notifyObservers(new TaskStatusUpdate(this, oldStatus, newStatus, updatedBy));
+        notifyObservers(new TaskStatusUpdate(this, oldStatus, newStatus, updatedBy)); // Wrote this keyword because The constructor for TaskStatusUpdate needs to know which task was updated i.e current.
     }
     
     // Subject interface methods

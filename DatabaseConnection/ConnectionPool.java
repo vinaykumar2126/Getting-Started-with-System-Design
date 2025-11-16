@@ -15,7 +15,7 @@ public class ConnectionPool {
         connections = new ArrayList<>();
         // Create the fixed number of connections when the pool is first created.
         for (int i = 0; i < MAX_CONNECTIONS; i++) {
-            connections.add(new DatabaseConnection());
+            connections.add(new DatabaseConnection());// Composition owning the DatabaseConnection
         }
     }
 

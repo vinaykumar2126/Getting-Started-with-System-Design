@@ -27,3 +27,7 @@ def compute_user_stddevs(scores):
     return summary
 result = compute_user_stddevs(scores)
 print(result) # {'A': {'stddev': 10.0, 'range': 20}, 'B': {'stddev': 0.0, 'range': 0}}
+
+hashmap = {"name": "ScaleAI", "type": "AI Company", "founded": 2016}
+print(hashmap.pop("type"))  # Output: AI Company
+print(hashmap)  # Output: {'name': 'ScaleAI', 'founded': 2016}

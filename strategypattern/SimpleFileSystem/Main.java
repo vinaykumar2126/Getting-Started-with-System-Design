@@ -1,4 +1,4 @@
-package strategypattern.SimpleFileSystem;
+package SimpleFileSystem;
 
 public class Main {
     public static void main(String[] args) {
@@ -21,7 +21,7 @@ public class Main {
         System.out.println("bye.txt: " + fs.readFile("bye.txt"));
 
 
-        System.out.println("missing.txt: "+ fs.readFile("missing.txt"));
-        // fs.listFiles()
+        System.out.println("missing.txt:"+ fs.readFile("missing.txt"));
+        fs.listFiles();
     }
 }
