@@ -13,11 +13,20 @@ public class Customer extends User{
         
     }
 
-    public Order placeOrder(User restaurant, FoodItem item, Deliverypartner.deliver deliveryType){
+    public OrderResult placeOrder(User restaurant, FoodItem item, Deliverypartner.deliver deliveryType){
         Order order = new Order(restaurant, this, item, deliveryType);
+        OrderValidator openValidator = new RestaurantOpenValidator();
+        OrderValidator itemValidator = new ItemAvailableValidator();
+        openValidator.setNext(itemValidator);
+
+    // Validate
+        if (!openValidator.validate(order)) {
+            return new OrderResult(false, "Order validation failed.", order);
+        }
+        
         payment(new CreditCard(),100.0); // Assuming a fixed amount for simplicity
         System.out.println("Order placed by "+this.name+" to "+((Restaurant) restaurant).getName()+" for item "+item.getDescription()+" with "+deliveryType+" delivery.");
-        return order;
+        return new OrderResult(true, "Order placed successfully.", order);
     }
     
 }

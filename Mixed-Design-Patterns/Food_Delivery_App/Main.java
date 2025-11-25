@@ -10,9 +10,15 @@ public class Main {
         item = new ExtraCheese(item, 2.0);
         item = new Mushrooms(item, 3.0); // Adding extra cheese
 
-        Order order=((Customer) customer).placeOrder(restaurant,item,Deliverypartner.deliver.Fast);
-        ((Deliverypartner) deliveryPartner).deliverOrder(order);
-
+        OrderResult result=((Customer) customer).placeOrder(restaurant,item,Deliverypartner.deliver.Fast);
+        if(result.isSuccess()){
+            System.out.println("Order Successful: " + result.getMessage());
+            Order order = result.getOrder();
+            ((Deliverypartner) deliveryPartner).deliverOrder(order);
+        }else{
+            System.out.println("Order Failed: " + result.getMessage());
+        }
+        
     }
     
 }
