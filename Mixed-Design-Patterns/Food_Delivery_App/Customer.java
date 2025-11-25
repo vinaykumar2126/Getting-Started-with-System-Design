@@ -13,10 +13,10 @@ public class Customer extends User{
         
     }
 
-    public Order placeOrder(User restaurant, String item, Deliverypartner.deliver deliveryType){
+    public Order placeOrder(User restaurant, FoodItem item, Deliverypartner.deliver deliveryType){
         Order order = new Order(restaurant, this, item, deliveryType);
         payment(new CreditCard(),100.0); // Assuming a fixed amount for simplicity
-        System.out.println("Order placed by "+this.name+" to "+((Restaurant) restaurant).getName()+" for item "+item+" with "+deliveryType+" delivery.");
+        System.out.println("Order placed by "+this.name+" to "+((Restaurant) restaurant).getName()+" for item "+item.getDescription()+" with "+deliveryType+" delivery.");
         return order;
     }
     
