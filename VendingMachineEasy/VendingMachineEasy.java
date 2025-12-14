@@ -14,7 +14,7 @@ public class VendingMachineEasy{
         state = newState;
     }
     public void insertCoin(int cents) {
-        state.insertCoin(this, cents);
+        state.insertCoin(this, cents); 
     }
     public void selectProduct(int idx) {
         state.selectProduct(this, idx);
