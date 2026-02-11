@@ -2,10 +2,9 @@ package splitwise.model;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import ChatApplication.User;
+import java.util.List;
+import java.util.ArrayList;
  
-@Getter
 public class Group {
     private final String id;
     private final String name;
@@ -19,13 +18,24 @@ public class Group {
         this.name = name;
     }
 
-    public void addMember(User user){}
+    public void addMember(User user){
+        members.add(user);
+        balanceSheet.put(user, new BalanceSheet());
+    }
     public void addExpense(Expense expense){
-        expense.add(expense);
+        expenses.add(expense);
     }
 
     public BalanceSheet getBalanceSheet(User user){
         return balanceSheet.get(user);
+    }
+
+    public List<User> getMembers(){
+        return members;
+    }
+
+    public String getId() {
+        return id;
     }
     
 }

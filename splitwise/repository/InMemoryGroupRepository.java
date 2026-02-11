@@ -1,5 +1,9 @@
 package splitwise.repository;
-
+import splitwise.model.Group;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.Optional;
+import java.util.Set;
 public class InMemoryGroupRepository implements GroupRespository {
     private final Map<String, Group> store = new HashMap<>();
 
@@ -12,5 +16,11 @@ public class InMemoryGroupRepository implements GroupRespository {
     public void save(Group group) {
         store.put(group.getId(), group);
     }
+    //     Set<String> keys = store.keySet();
+
+    //     for (String key : keys) {
+    //         System.out.println(key);
+    //     }
+    // }
     
 }

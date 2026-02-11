@@ -1,6 +1,7 @@
 package splitwise.model;
 
-@Getter
+import java.util.HashMap;
+import java.util.Map;
 public class BalanceSheet {
     private double totalPaid = 0.0;    // Total amount paid by the user
     private double totalExpense = 0.0; // Total share of the user 
@@ -12,13 +13,22 @@ public class BalanceSheet {
     public void addtotalExpense(double amount){
         totalExpense += amount;
     }
-    public void adduserBalance(User user, double amount){
+    public void addUserBalance(User user, double amount){
         userBalances.put(user, userBalances.getOrDefault(user, 0.0) + amount);
     }
-    public BalanceSheet getBalanceSheet(){
+    public BalanceSheet getBalanceSheet(User user){
         return this;
     }
+    public double getTotalPaid(){
+        return totalPaid;
+    }
+    public double getTotalExpense(){
+        return totalExpense;
+    }
 
+    public double get(User user){
+        return userBalances.getOrDefault(user, 0.0);
+    }
     public void settleBalance(User user, double amount){
         userBalances.put(user, userBalances.getOrDefault(user, 0.0) - amount);
     }

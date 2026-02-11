@@ -1,6 +1,6 @@
 package splitwise.model;
 
-@Getter
+
 public class Split {
     private final User user;
     private final double amount;
